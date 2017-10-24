@@ -4,7 +4,7 @@
 w = -pi:0.0001:pi; % Frecuencia.
 
 b0 = 1./(2+sqrt(2)); % Ganancia.
-w0 = pi/4; % Frecuencia de los ceros conjugados.
+w0 = pi/4; % Angulo de los ceros conjugados.
 
 % Funcion |H(w)|.
 V1 = 2-2.*cos(w-w0);
