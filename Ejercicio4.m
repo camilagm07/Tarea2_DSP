@@ -1,11 +1,23 @@
+% Ejercicio 4
+% Filtro Hanning.
+
 w = -pi:0.01:pi; % Frecuencia.
 
-H = sqrt((cos(w)).^2 + 0.25.*(sin(w)).^2);
+% Función |H(w)|.
+H = 0.5 .*sqrt((0.5+cos(w)+0.5 .*cos(2*w)).^2 + (sin(w)+0.5 .*sin(2*w)).^2);
 
-P = atan((-0.5.*sin(w))./(cos(w)));
+% Función <H(w).
+PH = atan((-sin(w)-0.5 .*sin(2*w))./(0.5+cos(w)+0.5 .*cos(2*w)));
 
+% Graficas de H(w).
 figure;
+subplot(1,2,1);
 plot(w, H);
-
-figure;
-plot(w, P);
+title('Respuesta en magnitud del filtro Hanning')
+xlabel('w');
+ylabel('|H(w)|');
+subplot(1,2,2);
+plot(w, PH);
+title('Respuesta en fase del filtro Hanning')
+xlabel('w');
+ylabel('<H(w)');
