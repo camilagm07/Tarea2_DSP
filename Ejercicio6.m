@@ -1,13 +1,25 @@
-w = -pi:0.01:pi; % Frecuencia.
+% Ejercicio 6
+% Filtro peine FIR de media movil.
 
-A = 1+cos(w)+cos(2*w)+cos(3*w)+cos(4*w)+cos(5*w)+cos(6*w)+cos(7*w)+cos(8*w);
-B = sin(w)+sin(2*w)+sin(3*w)+sin(4*w)+sin(5*w)+sin(6*w)+sin(7*w)+sin(8*w);
-H = sqrt((A).^2 + (B).^2);
+w = -pi:0.0001:pi; % Frecuencia.
 
-P = 1 - 36 .*w;
+% Funcion |H(w)|.
+A = sin(4.5*w);
+B = sin(0.5*w);
+H = abs(A./B);
 
+% Funcion <H(w).
+PH = atan(sin(9*w)./(1-cos(9*w))) - atan(sin(w)./(1-cos(w)));
+
+% Graficas de H(w).
 figure;
+subplot(1,2,1);
 plot(w, H);
-
-figure;
-plot(w, P);
+title('Respuesta en magnitud del filtro')
+xlabel('w');
+ylabel('|H(w)|');
+subplot(1,2,2);
+plot(w, PH);
+title('Respuesta en fase del filtro')
+xlabel('w');
+ylabel('<H(w)');

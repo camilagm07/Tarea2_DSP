@@ -1,13 +1,13 @@
 % Ejercicio 4
 % Filtro Hanning.
 
-w = -pi:0.01:pi; % Frecuencia.
+w = -pi:0.0001:pi; % Frecuencia.
 
 % Función |H(w)|.
-H = 0.5 .*sqrt((0.5+cos(w)+0.5 .*cos(2*w)).^2 + (sin(w)+0.5 .*sin(2*w)).^2);
+H = 0.5 .*abs(1+cos(w));
 
 % Función <H(w).
-PH = atan((-sin(w)-0.5 .*sin(2*w))./(0.5+cos(w)+0.5 .*cos(2*w)));
+PH = -w;
 
 % Graficas de H(w).
 figure;
