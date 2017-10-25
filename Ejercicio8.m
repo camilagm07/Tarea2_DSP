@@ -14,12 +14,12 @@ H8 = sqrt(2-2 .*cos(8*w))./sqrt(1-2*a .*cos(8*w) + a^2);
 figure;
 subplot(1,2,1);
 plot(w, H);
-title('Respuesta en magnitud del filtro hendidura')
+title('Respuesta en magnitud del filtro hendidura con polos en a = 0.9')
 xlabel('w');
 ylabel('|H(w)|');
 subplot(1,2,2);
 plot(w, H8);
-title('Respuesta en magnitud del filtro peine')
+title('Respuesta en magnitud del filtro peine con polos en a = 0.9')
 xlabel('w');
 ylabel('|H8(w)|');
 
