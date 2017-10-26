@@ -2,95 +2,87 @@
 
 f = [-1:0.004:1];
 w = 3.14*f;
+s = size(w);
 
 % Inciso A
+b0 = 1/2;
+realA = 1-cos(w);
+imagA = sin(w);
 
-magA = abs(sin(w/2));
+[MagnitudA,FaseA] = Fase(s,realA,imagA);
 
-s = size(w);
-for n =1 : s(2)
-  if w(n) < 0
-    pha(n) = -0.5*(w(n)+3.14);
-  end
-  if w(n) == 0
-    pha(n) = 0;
-  end
-  if w(n) > 0
-    pha(n) = -0.5*(w(n)-3.14);
-  end
-end
+MagnitudA = MagnitudA*b0;
 
 figure(1)
 subplot(1,2,1);
-plot(w,magA);
+plot(w,MagnitudA);
 title("Magnitud inciso a")
 xlabel('w');
 ylabel('|Ha(jw)|');
 subplot(1,2,2);
-plot(w,pha,"r");
+plot(w,FaseA,"b");
 title("Fase de inciso a")
 xlabel('w');
 ylabel('<Ha(jw)');
 
 % Inciso B
 
-magB = abs(sin(w));
+b0 = 1/2;
+realB = 1-cos(2*w);
+imagB = sin(2*w);
 
-s = size(w);
-for n =1 : s(2)
-  if w(n) < 0
-    phaB(n) = -(w(n)+3.14);
-  end
-  if w(n) == 0
-    phaB(n) = 0;
-  end
-  if w(n) > 0
-    phaB(n) = -(w(n)-3.14);
-  end
-end
+[MagnitudB,FaseB] = Fase(s,realB,imagB);
+
+MagnitudB = MagnitudB*b0;
 
 figure(2)
 subplot(1,2,1);
-plot(w,magB,"g");
+plot(w,MagnitudB,"g");
 title("Magnitud inciso b")
 xlabel('w');
 ylabel('|Hb(jw)|');
 subplot(1,2,2);
-plot(w,phaB,"m");
+plot(w,FaseB,"g");
 title("Fase de inciso b")
 xlabel('w');
 ylabel('<Hb(jw)');
 
 % Inciso C
 
-magC = abs(cos(w));
-phaC = -w;
+realC = 1+cos(2*w);
+imagC = -sin(2*w);
+
+[MagnitudC,FaseC] = Fase(s,realC,imagC);
+
+MagnitudC = MagnitudC*1/2;
 
 figure(3)
 subplot(1,2,1);
-plot(w,magC,"m");
+plot(w,MagnitudC,"m");
 title("Magnitud inciso c")
 xlabel('w');
 ylabel('|Hc(jw)|');
 subplot(1,2,2);
-plot(w,phaC,"c");
+plot(w,FaseC,"m");
 title("Fase de inciso c")
 xlabel('w');
 ylabel('<Hc(jw)');
 
 % Inciso D
 
-magD = abs(2-exp(-2*w*j));
-phaD = -2*w;
+realD = 2-cos(2*w);
+imagD = sin(2*w);
+
+[MagnitudD,FaseD] = Fase(s,realD,imagD);
 
 figure(4)
 subplot(1,2,1);
-plot(w,magD,"r");
+plot(w,MagnitudD,"r");
 title("Magnitud inciso d")
 xlabel('w');
 ylabel('|Hd(jw)|');
 subplot(1,2,2);
-plot(w,phaD, "g");
+plot(w,FaseD, "r");
 title("Fase de inciso d")
 xlabel('w');
 ylabel('<Hd(jw)');
