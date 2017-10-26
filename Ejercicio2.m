@@ -68,6 +68,6 @@ stem(n = 0:1:M-1, yb(n+1), 'b.');
 hold off;
 grid;
 axis([-1,26,-1.1,1.25]);
-title('Respuesta a entrada sinusoidal de periodo N = 8 muestras. 25 muestras.')
+title('Respuesta a entrada sinusoidal discreta de frecuencia w = pi/4. 25 muestras.')
 xlabel('n');
 legend('x(n): Entrada.','y(n): Salida.');
