@@ -54,7 +54,7 @@ figure;
 subplot(1,2,1);
 stem(n = 0:1:M-1, x1(n+1), 'r.');
 grid;
-title('Entrada sinusoidal de periodo N = 25 muestras. 50 muestras.')
+title('Entrada sinusoidal discreta de frecuencia w = 0.24pi. 50 muestras.')
 %axis([-1,26,-0.1,2.25]);
 xlabel('n');
 ylabel('x(n)');
@@ -73,7 +73,7 @@ figure;
 subplot(1,2,1);
 stem(n = 0:1:M-1, x2(n+1), 'r.');
 grid;
-title('Entrada sinusoidal de periodo N = 5 muestras. 50 muestras.')
+title('Entrada sinusoidal discreta de frecuencia w = 0.8pi. 50 muestras.')
 %axis([-1,26,-0.1,2.25]);
 xlabel('n');
 ylabel('x(n)');
