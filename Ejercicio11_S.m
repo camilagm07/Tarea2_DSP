@@ -56,5 +56,4 @@ hold off;
 grid;
 axis([-1,5,-3,11]);
 xlabel('n');
-ylabel('x(n), y(n), h(n)');
 legend('x(n)','y(n)','h(n)');
