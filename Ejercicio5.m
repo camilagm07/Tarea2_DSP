@@ -21,12 +21,12 @@ Magnitud = Magnitud*b0;
 figure(1)
 subplot(1,2,1);
 plot(w,Magnitud,"m");
-title("Magnitud filtro rechaza wo=2pi/3")
-xlabel('w');
-ylabel('|H(jw)|');
+title("Magnitud filtro rechaza wo=2pi/3","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|H(jw)|',"FontSize",14);
 
 subplot(1,2,2);
 plot(w,Phase,"m");
-title("Fase filtro rechaza wo=2pi/3")
-xlabel('w');
-ylabel('<H(jw)');
+title("Fase filtro rechaza wo=2pi/3","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<H(jw)',"FontSize",14);

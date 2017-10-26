@@ -22,15 +22,15 @@ Fase2 = FaseN.-FaseD; %Fase de la funcion de transferencia
 figure(1)
 subplot(1,2,1);
 plot(w,Magnitud,"m");
-title("Magnitud filtro rechaza wo=0")
-xlabel('w');
-ylabel('|H(jw)|');
+title("Magnitud filtro rechaza wo=0","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|H(jw)|',"FontSize",14);
 
 subplot(1,2,2);
 plot(w,Fase2,"m");
-title("Fase filtro rechaza wo=0")
-xlabel('w');
-ylabel('<H(jw)');
+title("Fase filtro rechaza wo=0","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<H(jw)',"FontSize",14);
 
 % c) Normalizada
 bo = 1/20;
@@ -39,15 +39,15 @@ Magnitud2 = Magnitud*bo;
 figure(2)
 subplot(1,2,1);
 plot(w,Magnitud2,"b");
-title("Magnitud filtro rechaza wo=0 normalizada")
-xlabel('w');
-ylabel('|H(jw)|');
+title("Magnitud filtro rechaza wo=0 normalizada","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|H(jw)|',"FontSize",14);
 
 subplot(1,2,2);
 plot(w,Fase2,"b");
-title("Fase filtro rechaza wo=0")
-xlabel('w');
-ylabel('<H(jw)'); 
+title("Fase filtro rechaza wo=0","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<H(jw)',"FontSize",14); 
 
 % d) Salida con entrada 2cos((pi/2)n+pi/4);
 
@@ -67,14 +67,14 @@ end
 figure(3)
 subplot(1,2,1);
 plot(n,x,"r");
-title("x(n)= 2cos((pi/2)n+pi/4)")
-xlabel('n');
-ylabel('x(n)');
+title("x(n)= 2cos((pi/2)n+pi/4)","FontSize",14)
+xlabel('n',"FontSize",14);
+ylabel('x(n)',"FontSize",14);
 
 subplot(1,2,2);
 plot(n,y,"r");
-title("y(n) = 1/20(x(n)-x(n-1)) - 0.9y(n)")
-xlabel('n');
-ylabel('y(n)'); 
+title("y(n) = 1/20(x(n)-x(n-1)) - 0.9y(n)","FontSize",14)
+xlabel('n',"FontSize",14);
+ylabel('y(n)',"FontSize",14); 
 
 

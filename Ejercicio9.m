@@ -31,15 +31,15 @@ P3 = P1+P2;
 figure(1)
 subplot(1,2,1);
 plot(w,H,"m");
-title("Magnitud filtro ranura FIR de segundo orden")
-xlabel('w');
-ylabel('|Ha(jw)|');
+title("Magnitud filtro ranura FIR","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|Ha(jw)|',"FontSize",14);
 
 subplot(1,2,2);
 plot(w,P3,"m");
-title("Fase filtro ranura FIR de segundo orden")
-xlabel('w');
-ylabel('<Ha(jw)');
+title("Fase filtro ranura FIR","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<Ha(jw)',"FontSize",14);
 
 % Inciso B: filtro de segundo orden con polos r = 0.9
 b1 = 0.9030;
@@ -64,12 +64,12 @@ PT = P3-(P4+P5); %Le resto a la fase de los ceros la fase de los polos
 figure(2)
 subplot(1,2,1);
 plot(w,H2,"r");
-title("Magnitud filtro hendidura de segundo orden")
-xlabel('w');
-ylabel('|Ha(jw)|');
+title("Magnitud filtro ranura","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|Ha(jw)|',"FontSize",14);
 
 subplot(1,2,2);
 plot(w,PT,"r");
-title("Fase filtro hendidura de segundo orden")
-xlabel('w');
-ylabel('<Ha(jw)');
+title("Fase filtro ranura","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<Ha(jw)',"FontSize",14);

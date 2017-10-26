@@ -16,14 +16,14 @@ MagnitudA = MagnitudA*b0;
 figure(1)
 subplot(1,2,1);
 plot(w,MagnitudA);
-title("Magnitud inciso a")
-xlabel('w');
-ylabel('|Ha(jw)|');
+title("Magnitud inciso a","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|Ha(jw)|',"FontSize",14);
 subplot(1,2,2);
 plot(w,FaseA,"b");
-title("Fase de inciso a")
-xlabel('w');
-ylabel('<Ha(jw)');
+title("Fase de inciso a","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<Ha(jw)',"FontSize",14);
 
 % Inciso B
 
@@ -38,14 +38,14 @@ MagnitudB = MagnitudB*b0;
 figure(2)
 subplot(1,2,1);
 plot(w,MagnitudB,"g");
-title("Magnitud inciso b")
-xlabel('w');
-ylabel('|Hb(jw)|');
+title("Magnitud inciso b","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|Hb(jw)|',"FontSize",14);
 subplot(1,2,2);
 plot(w,FaseB,"g");
-title("Fase de inciso b")
-xlabel('w');
-ylabel('<Hb(jw)');
+title("Fase de inciso b","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<Hb(jw)',"FontSize",14);
 
 % Inciso C
 
@@ -59,14 +59,14 @@ MagnitudC = MagnitudC*1/2;
 figure(3)
 subplot(1,2,1);
 plot(w,MagnitudC,"m");
-title("Magnitud inciso c")
-xlabel('w');
-ylabel('|Hc(jw)|');
+title("Magnitud inciso c","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|Hc(jw)|',"FontSize",14);
 subplot(1,2,2);
 plot(w,FaseC,"m");
-title("Fase de inciso c")
-xlabel('w');
-ylabel('<Hc(jw)');
+title("Fase de inciso c","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<Hc(jw)',"FontSize",14);
 
 % Inciso D
 
@@ -78,11 +78,11 @@ imagD = sin(2*w);
 figure(4)
 subplot(1,2,1);
 plot(w,MagnitudD,"r");
-title("Magnitud inciso d")
-xlabel('w');
-ylabel('|Hd(jw)|');
+title("Magnitud inciso d","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('|Hd(jw)|',"FontSize",14);
 subplot(1,2,2);
 plot(w,FaseD, "r");
-title("Fase de inciso d")
-xlabel('w');
-ylabel('<Hd(jw)');
+title("Fase de inciso d","FontSize",14)
+xlabel('w',"FontSize",14);
+ylabel('<Hd(jw)',"FontSize",14');
