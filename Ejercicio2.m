@@ -7,29 +7,33 @@ b0 = 1./(2+sqrt(2)); % Ganancia.
 w0 = pi/4; % Angulo de los ceros conjugados.
 
 % Funcion |H(w)|.
-V1 = 2-2.*cos(w-w0);
-V2 = 2-2.*cos(w+w0);
-H = abs(b0).*sqrt(V1.*V2);
+H = abs(b0).*sqrt((2-2.*cos(w-w0)).*(2-2.*cos(w+w0)));
 
 % Funcion <H(w).
-A = sin(w-w0);
-B = 1-cos(w-w0);
-C = sin(w+w0);
-D = 1-cos(w+w0);
-PH = atan(A./B)+atan(C./D);
+PH = atan((sin(w-w0))./(1-cos(w-w0)))+atan((sin(w+w0))./(1-cos(w+w0)));
 
-% Salida inciso a.
-%Xa =
-%PXa =
-%Ya =
-%PYa =
+% Salidas ante entradas.
+M = 25; % Número muestras.
 
-% Salida inciso b.
-Xb = (sqrt(2)./2).*(1 ./sqrt(2-2 .*cos(w)));
-PXb = -atan(sin(w)./(1-cos(w)));
-Yb = H.*Xb;
-PYb = PH+PXb;
+% Inciso a.
+wa = 0; % Frecuencua de x(n).
+Ha = abs(b0).*sqrt((2-2.*cos(wa-w0)).*(2-2.*cos(wa+w0))); % |H(wa)|.
+PHa = atan((sin(wa-w0))./(1-cos(wa-w0)))+atan((sin(wa+w0))./(1-cos(wa+w0))); % <H(wa).
+for (n = 1:1:M+1) % Formacion de las secuencias.
+  xa(n) = 2*cos(0*n);
+  ya(n) = 2*Ha*cos(0*n+PHa);
+  endfor
 
+% Inciso b.
+wb = w0; % Frecuencua de x(n).
+Hb = abs(b0).*sqrt((2-2 .*cos(wb-w0)).*(2-2 .*cos(wb+w0))); % |H(wb)|.
+%PHb = atan((sin(wb-w0))./(1-cos(wb-w0)))+atan((sin(wb+w0))./(1-cos(wb+w0))); % Se indefine.
+for (n = 1:1:M+1) % Formacion de las secuencias.
+  xb(n) = sin(wb*n);
+  yb(n) = Hb*sin(wb*n);
+  endfor
+
+  
 % Graficas de H(w).
 figure;
 subplot(1,2,1);
@@ -43,15 +47,27 @@ title('Respuesta en fase del filtro')
 xlabel('w');
 ylabel('<H(w)');
 
-%  Graficas de salida inciso b.
+%  Graficas de salida.
+% Se corren a n+1 para que empiece en n = 0 la graficacion.
 figure;
 subplot(1,2,1);
-plot(w, Yb);
-title('Respuesta en magnitud de salida inciso b')
-xlabel('w');
-ylabel('|Y(w)|');
+hold on;
+stem(n = 0:1:M-1, xa(n+1), 'r.');
+stem(n = 0:1:M-1, ya(n+1), 'b.');
+hold off;
+grid;
+axis([-1,26,-0.1,2.25]);
+title('Respuesta a entrada x(n) = 2. 25 muestras.')
+xlabel('n');
+legend('x(n): Entrada.','y(n): Salida.');
+
 subplot(1,2,2);
-plot(w, PYb);
-title('Respuesta en fase de salida inciso b')
-xlabel('w');
-ylabel('<Y(w)');
+hold on;
+stem(n = 0:1:M-1, xb(n+1), 'r.');
+stem(n = 0:1:M-1, yb(n+1), 'b.');
+hold off;
+grid;
+axis([-1,26,-1.1,1.25]);
+title('Respuesta a entrada sinusoidal de periodo N = 8 muestras. 25 muestras.')
+xlabel('n');
+legend('x(n): Entrada.','y(n): Salida.');
