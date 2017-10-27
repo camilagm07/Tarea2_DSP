@@ -10,7 +10,7 @@ a1 = -2*cos(w0);
 y1 = 1;
 y2 = 0;
 
-for n = (1:1:61) % Algoritmo recursivo.
+for n = (1:1:60) % Algoritmo recursivo.
   y(n) = b0 - a1*y1 - y2;
   
   % Cambio de condiciones.
@@ -20,7 +20,7 @@ for n = (1:1:61) % Algoritmo recursivo.
   endfor
 
 %Graficacion.
-stem(n = 0:1:60, y(n+1), '.'); % Se corre para que empiece en n = 0.
+stem(n = 0:1:59, y(n+1), '.'); % Se corre para que empiece en n = 0.
 title('Oscilador digital con periodo N = 6')
 grid;
 axis([-1,63,-2.2,2.2]);

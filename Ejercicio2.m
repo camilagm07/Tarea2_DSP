@@ -19,7 +19,7 @@ M = 25; % Número muestras.
 wa = 0; % Frecuencua de x(n).
 Ha = abs(b0).*sqrt((2-2.*cos(wa-w0)).*(2-2.*cos(wa+w0))); % |H(wa)|.
 PHa = atan((sin(wa-w0))./(1-cos(wa-w0)))+atan((sin(wa+w0))./(1-cos(wa+w0))); % <H(wa).
-for (n = 1:1:M+1) % Formacion de las secuencias.
+for (n = 1:1:M) % Formacion de las secuencias.
   xa(n) = 2*cos(0*n);
   ya(n) = 2*Ha*cos(0*n+PHa);
   endfor
@@ -28,7 +28,7 @@ for (n = 1:1:M+1) % Formacion de las secuencias.
 wb = w0; % Frecuencua de x(n).
 Hb = abs(b0).*sqrt((2-2 .*cos(wb-w0)).*(2-2 .*cos(wb+w0))); % |H(wb)|.
 %PHb = atan((sin(wb-w0))./(1-cos(wb-w0)))+atan((sin(wb+w0))./(1-cos(wb+w0))); % Se indefine.
-for (n = 1:1:M+1) % Formacion de las secuencias.
+for (n = 1:1:M) % Formacion de las secuencias.
   xb(n) = sin(wb*n);
   yb(n) = Hb*sin(wb*n);
   endfor
